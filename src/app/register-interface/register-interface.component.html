@@ -1,0 +1,74 @@
+<!-- 
+<app-navbar></app-navbar> -->
+
+<body>
+    
+    <div class="flex justify-center mt-10">
+        <div class="h-510 w-500 p-20 border" *ngIf="!readyToVerify">
+         <div class="flex justify-between	">
+            <h2>
+                Fill Your Details!
+            </h2>
+            <div>
+                <!-- {{ isLoading ? 'Sending OTP...' : ' ' }} -->
+                <!-- <mat-progress-spinner  style="width: 25px; height: 25px;" *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner> -->
+            </div>
+         </div>
+            <form [formGroup]="registrationForm" (ngSubmit)="verifydata()" >
+                <div class="form-control">
+                    <input type="email" required formControlName="email" placeholder="Email">
+                  
+                </div>
+    
+                <div class="form-control">
+                    <input type="text" required formControlName="studentName" placeholder="Student Name">
+                   
+                </div>
+
+                <div class="form-control">
+                    <input type="text" required formControlName="yearOfStudy" placeholder="Year Of Study">
+                   
+                </div>
+
+                <div class="form-control">
+                    <input type="text" required formControlName="demoTime" placeholder="Demo Time">
+                   
+                </div>
+
+                <div class="form-control">
+                    <input type="text" required formControlName="address" placeholder="Address">
+                   
+                </div>
+    
+                <div class="form-control">
+                    <input type="number" required formControlName="phoneNo" placeholder="Phone No">
+                  
+                </div>
+        
+                <button type="submit"  >Submit</button>
+                <!-- <div class="form-help">
+                    <a href="#">Need help?</a>
+                </div> -->
+        
+            </form>
+        </div>
+    
+        <div  class="flex justify-center mt-10" *ngIf="readyToVerify">
+        <div class="h-570 w-500 p-20 border">
+            <h2>
+                Submit Otp!
+            </h2>
+            <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()" >
+                <div class="form-control">
+                    <input type="number" required formControlName="otp" placeholder="Enter OTP...">
+                </div>
+                <button type="submit"  >Submit</button>    
+            </form>
+            <div class="form-help">
+                <button (click)="checkData()">Resend Otp</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </body>
+    

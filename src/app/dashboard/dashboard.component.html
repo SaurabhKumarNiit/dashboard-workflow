@@ -1,0 +1,43 @@
+
+<div class="container">
+    <div class="card">
+        <div class="card-header card-header" style="
+        display: flex;
+        justify-content: space-around;
+        background-color: #1111;
+        padding: 20px;
+      ">
+            <h4 class="card-title" style="font-size: larger; font-weight: 800;">All Data</h4>
+
+            <div>
+                <a style="text-decoration: none;font-size: 20px; color: #111; font-weight: 800;" routerLink="home">Home</a>
+            </div>
+            <div>
+                <a style="text-decoration: none; font-size: 20px; color: #111; font-weight: 800;" routerLink="register">Demo</a>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+            <!-- <table class="table table-hover">
+                <thead class="text-warning">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>View</th>
+                </thead>
+                <tbody *ngFor="let info of allOrganizations; let i = index" id="data">
+                    <tr>
+                        <td>{{ i + 1 }}.</td>
+                        <td>{{ info.sName }}</td>
+                        <td>{{ info.sEmail}}</td>
+                        <td>
+                            <a routerLink="{{ info._id }}"><img
+                                    src="https://www.freeiconspng.com/thumbs/eye-icon/eyeball-icon-png-eye-icon-1.png"
+                                    alt="" width="30px" /></a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table> -->
+        </div>
+    </div>
+</div>
