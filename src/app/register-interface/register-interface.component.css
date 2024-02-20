@@ -17,7 +17,44 @@ form .form-control{
     border-radius: 10px;
     padding: 10px;
 }
+.form-controls{
+    border: 1px solid #111;
+    border-radius: 10px;
+    padding: 10px;
+}
+.form-controls label{
+    font-size: 15px;
+}
+.form-controls input{
+  margin-left:5px;
+  margin-right:10px;
+
+}
 .form-control input{
+
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: black;
+    font-size: 18px;
+    border-radius: 4px;
+  
+}
+.form-controls input[type="radio"] {
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+  .form-controls label {
+    cursor: pointer;
+  }
+  
+  /* Optional: Add a hover effect to the labels for better feedback */
+  .form-controls label:hover {
+    color: #3366cc; /* Change the color to your preference */
+  }
+.form-control p{
 
     height: 100%;
     width: 100%;

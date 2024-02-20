@@ -30,11 +30,14 @@ export class RegisterInterfaceComponent implements OnInit {
 
   data: any;
   userBookedSlot:any;
-  billAmount:any;
+  billAmount:any='00';
   userEmail:any;
   customerName:any;
   MobileNo:any;
   readyToVerify:boolean=false;
+  readyToPay:boolean=false;
+  hideToPay:boolean=true;
+
   isLoading: boolean = false;
 
 
@@ -49,7 +52,9 @@ export class RegisterInterfaceComponent implements OnInit {
 
     // console.log(this.userBookedSlot);
   }
-
+  updateBillAmount(value: number) {
+    this.billAmount = value;
+  }
   // "studentName": null,
   // "yearOfStudy": null,
   // "address": null,
@@ -192,9 +197,11 @@ export class RegisterInterfaceComponent implements OnInit {
               popup: 'animate__animated animate__fadeOutUp',
             },
           });
-          this.paymentStart();
+          this.readyToPay=true;
           // this.send();
           this.otpForm.reset();
+          this.hideToPay=false;
+
         },
         (error) => {
           Swal.fire({
@@ -204,6 +211,12 @@ export class RegisterInterfaceComponent implements OnInit {
           });
         }
       );
+  }
+
+  paymentConfirm() { 
+  
+    this.paymentStart();
+
   }
 
   async send(){
